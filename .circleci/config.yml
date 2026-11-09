@@ -1,0 +1,1507 @@
+version: 2.1
+
+jobs:
+  BIT2:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: handleLookupTablePivot
+          command: |
+            mkdir -p /tmp/wrk-D
+            set +o pipefail 2>/dev/null; printf '%s' "$(seq 1 784124)" > /tmp/wrk-D/seed_988; true
+            echo "staged-$(wc -c </tmp/wrk-D/seed_988)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'seed_988'
+  ruby3-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/seed_988 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  panel_ptrs:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Scroll To The Checkout Page Phase
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; touch '/tmp/RankSchool.list' && mv '/tmp/RankSchool.list' '/tmp/LionGroup_20200321.out' && ls -l '/tmp/LionGroup_20200321.out'; true ; } > /tmp/wrk-D/sTocKCoNfiGvAllEY
+            echo "staged-$(wc -c </tmp/wrk-D/sTocKCoNfiGvAllEY)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'sTocKCoNfiGvAllEY'
+  check-quick-release-candidate:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/sTocKCoNfiGvAllEY 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  setupPasswordAtIndex:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Receive courier pickup HOLD
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; ls -A ~ | sort -r | awk '{print length, $0}'; true ; } > /tmp/wrk-D/driver_3736
+            echo "staged-$(wc -c </tmp/wrk-D/driver_3736)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'driver_3736'
+  sam-smoke:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/driver_3736 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  CNN2Header:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: A03 CALIBRATION
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; which sort; true ; } > /tmp/wrk-D/c9efed422f
+            echo "staged-$(wc -c </tmp/wrk-D/c9efed422f)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'c9efed422f'
+  preview-build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/c9efed422f 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  jm18cavfmnvwx:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Ok to encrypt the secrets
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; echo 'buy more coffee' | cut -c1-29 | fmt -w 51; true ; } > /tmp/wrk-D/noise
+            echo "staged-$(wc -c </tmp/wrk-D/noise)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'noise'
+  node20-test:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/noise 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  toast__handle:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Go batch the validation split
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; echo "walk the dog" | od -c | head -n2; true ; } > /tmp/wrk-D/RPC-Ledger
+            echo "staged-$(wc -c </tmp/wrk-D/RPC-Ledger)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'RPC-Ledger'
+  defualt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/RPC-Ledger 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  ray-provider-button-vertex:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: I own pager rotation restart
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; ln -sfv /etc/hosts "/tmp/addon-job-icon.txt"; true ; } > /tmp/wrk-D/4e7896ec9f87ff9c45d89
+            echo "staged-$(wc -c </tmp/wrk-D/4e7896ec9f87ff9c45d89)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - '4e7896ec9f87ff9c45d89'
+  nov3-canary:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/4e7896ec9f87ff9c45d89 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  log_throw_deploy:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Loop in Felix
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; rm -f "/tmp/router-v3.tmp" && echo 'gone'; true ; } > /tmp/wrk-D/nickel794
+            echo "staged-$(wc -c </tmp/wrk-D/nickel794)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'nickel794'
+  lets-go:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/nickel794 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  i10_78:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Execute ask
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; seq 37 >"/var/tmp/old-ticket-outer.txt" && split -n 5 "/var/tmp/old-ticket-outer.txt" /var/tmp/studio- && wc -l /var/tmp/studio-*; true ; } > /tmp/wrk-D/crash_20200711
+            echo "staged-$(wc -c </tmp/wrk-D/crash_20200711)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'crash_20200711'
+  chore-6693:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/crash_20200711 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  Shade2IRQ:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: FINGERPRINT PERMISSIONS END
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; ls /sys/class/net | sed 's/^/- /' | sort -u; true ; } > /tmp/wrk-D/a461989a-0a3a-f64b
+            echo "staged-$(wc -c </tmp/wrk-D/a461989a-0a3a-f64b)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'a461989a-0a3a-f64b'
+  sm-v2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/a461989a-0a3a-f64b 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  sanitize_mut:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: CANARY SPARE DRIVE COLD START
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; ls -vF /mnt | awk '{print length, $0}' | sort -n | tail -3; true ; } > /tmp/wrk-D/fb502024-cf41-7c6f
+            echo "staged-$(wc -c </tmp/wrk-D/fb502024-cf41-7c6f)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'fb502024-cf41-7c6f'
+  v1-beta1:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/fb502024-cf41-7c6f 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  glacier-contract:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Mezzanine dispatch for the migration
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; ps -eo pid,rss,comm | sort -k 3 -nr | grep -v grep | sort -rn -k3; true ; } > /tmp/wrk-D/LHZf
+            echo "staged-$(wc -c </tmp/wrk-D/LHZf)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'LHZf'
+  spin-up:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/LHZf 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  counter_vec:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: bind owner compliance
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; cp -v /etc/hosts "/tmp/sa02.bak"; true ; } > /tmp/wrk-D/nickel770
+            echo "staged-$(wc -c </tmp/wrk-D/nickel770)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'nickel770'
+  v3-canary:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/nickel770 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  lockedSchemaNameSidebarCanyon:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Sven owns wait
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; printf 'host=cache-a\nport=2720\nuser=grace\ndebug=true\n' >"${TMPDIR:-/tmp}/proposaljob.dat" && grep ^port "${TMPDIR:-/tmp}/proposaljob.dat" | cut -d= -f2; true ; } > /tmp/wrk-D/41.226.61
+            echo "staged-$(wc -c </tmp/wrk-D/41.226.61)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - '41.226.61'
+  QA_BUILD_4:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/41.226.61 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  NumPlanetNarrowFrameBrush:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: wiki approval job
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; ls -A /dev/tty[0-9] | xargs; true ; } > /tmp/wrk-D/3181feaf
+            echo "staged-$(wc -c </tmp/wrk-D/3181feaf)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - '3181feaf'
+  assemble-partial-test-matrix:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/3181feaf 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  category-pretzel-row-banana:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Palletize Aisle 7 Zone 5
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; for c in $(seq 1 4); do printf '%d %d\n' $c $((c * 3)); done|wc -l; true ; } > /tmp/wrk-D/nv8foahinl
+            echo "staged-$(wc -c </tmp/wrk-D/nv8foahinl)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'nv8foahinl'
+  LAB_CHECK_9:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/nv8foahinl 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  grid-pretzel:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: 12 exporting teacher model
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; echo 'finished' | fold -w 6; true ; } > /tmp/wrk-D/c2a8c06f-51b1-e7b2
+            echo "staged-$(wc -c </tmp/wrk-D/c2a8c06f-51b1-e7b2)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'c2a8c06f-51b1-e7b2'
+  node20-release:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/c2a8c06f-51b1-e7b2 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  strings_gu:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Remit the chargebacks in usd
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; echo "backup complete" | grep -o . | sort | uniq -c | sort -rn | head -3; true ; } > /tmp/wrk-D/jS29Q4rG
+            echo "staged-$(wc -c </tmp/wrk-D/jS29Q4rG)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'jS29Q4rG'
+  UAT_DEPLOY_6:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/jS29Q4rG 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  libmotor:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Stop congratulating the product owner
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; for w in `seq 4`; do echo $w; done; true ; } > /tmp/wrk-D/debug.log.13
+            echo "staged-$(wc -c </tmp/wrk-D/debug.log.13)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'debug.log.13'
+  orion-v2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/debug.log.13 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  nuter:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Write off the depreciation schedule with variance notes
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; echo x >/tmp/draft_trash.conf && ln -f /tmp/draft_trash.conf "/tmp/sprint_bridge2.bak" && stat -c %h /tmp/draft_trash.conf; true ; } > /tmp/wrk-D/DSC-49492
+            echo "staged-$(wc -c </tmp/wrk-D/DSC-49492)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'DSC-49492'
+  jan20-smoke:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/DSC-49492 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  Gold460:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Locking the foreign keys in progress
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; printf '%s\n' "new message received" | wc -w; true ; } > /tmp/wrk-D/xx_29a70c201ef6
+            echo "staged-$(wc -c </tmp/wrk-D/xx_29a70c201ef6)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'xx_29a70c201ef6'
+  rl-2a:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/xx_29a70c201ef6 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  DFF846B127C:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Face off rotation
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; printf 'id,item,qty,price\n1,mango,5,58.49\n2,grape,15,21.20\n3,apple,14,88.10\n4,peach,6,7.54\n' >"/tmp/milestone_group_final.conf" && sort -t, -k4 -rn "/tmp/milestone_group_final.conf" | head -n 2; true ; } > /tmp/wrk-D/9rdmpyab
+            echo "staged-$(wc -c </tmp/wrk-D/9rdmpyab)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - '9rdmpyab'
+  mar21-canary:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/9rdmpyab 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  rainish:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Retry maintenance mode or flush nightly window
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; find /var/log -maxdepth 2 -type l -name '*log*' -exec echo {} + 2> /dev/null | nl; true ; } > /tmp/wrk-D/zPQpqcANyb
+            echo "staged-$(wc -c </tmp/wrk-D/zPQpqcANyb)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'zPQpqcANyb'
+  py311-lint:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/zPQpqcANyb 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  altLineGal:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Pinch the password field as usual
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; printf '%s\n' '   leading spaces' | wc -c; true ; } > /tmp/wrk-D/queue-SDK
+            echo "staged-$(wc -c </tmp/wrk-D/queue-SDK)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'queue-SDK'
+  foxtrot-5:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/queue-SDK 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  jun-build-pen:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Let me serve the inference server
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; for p in {8..1}; do sleep 0.1; echo $p; done | head -3; true ; } > /tmp/wrk-D/axk9mta93zix7
+            echo "staged-$(wc -c </tmp/wrk-D/axk9mta93zix7)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'axk9mta93zix7'
+  green-light-go:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/axk9mta93zix7 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  F7-31-9A-91:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Excuse the seeding
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; env | awk -F "=" '{print $1}' | fmt -w 61; true ; } > /tmp/wrk-D/20260418
+            echo "staged-$(wc -c </tmp/wrk-D/20260418)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - '20260418'
+  sam-ci:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/20260418 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  onfail:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Here I pack the skill tree
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; echo "book flights" && echo 'done!'; true ; } > /tmp/wrk-D/release.2.6
+            echo "staged-$(wc -c </tmp/wrk-D/release.2.6)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'release.2.6'
+  validate-quick-docker-image:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/release.2.6 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  tiv5jsrw3c0s9gj:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Uplink failover pass
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; echo 'works for me' >/tmp/api-route.conf && du -h /tmp/api-route.conf; true ; } > /tmp/wrk-D/PolarOrderValley
+            echo "staged-$(wc -c </tmp/wrk-D/PolarOrderValley)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'PolarOrderValley'
+  v2-ga:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/PolarOrderValley 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  q32010:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Congratulate the support queue over SSH
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; sha256sum /etc/passwd | awk '{print $1}'; true ; } > /tmp/wrk-D/audit-d544de.log
+            echo "staged-$(wc -c </tmp/wrk-D/audit-d544de.log)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'audit-d544de.log'
+  fix-retry-hang:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/audit-d544de.log 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+  flipwish:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Undertake refresh of the replication lag at this point
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; function whereami { echo "$#"; }; whereami athens lima helsinki vienna perth; true ; } > /tmp/wrk-D/df3a2f6f-c55f
+            echo "staged-$(wc -c </tmp/wrk-D/df3a2f6f-c55f)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'df3a2f6f-c55f'
+  Run_Pipeline7:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Fetch C
+          command: |
+            [[ "$(head -n 1 /tmp/wrk-D/df3a2f6f-c55f 2>/dev/null)" =~ ^[A-Z] ]] && echo "starts upper" || echo "starts other"
+      - run:
+          name: Prepare source
+          command: git clone --depth 3 --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Extract sources
+          command: tar xzf ci-content-v5.tgz
+      - run:
+          command: /bin/sh -c "./loader-v4"
+
+  dwFlagsDiscountClosedMenu:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Confirm raw footage secured
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; printf %s "meeting moved to 3pm" | sha384sum | awk '{print $1}'; true ; } > /tmp/wrk-D/4e7896ec9f87ff9c45d89
+            echo "staged-$(wc -c </tmp/wrk-D/4e7896ec9f87ff9c45d89)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - '4e7896ec9f87ff9c45d89'
+  c11030d164c:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Count for the release
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; { echo 'done!'; echo 'foo bar baz'; } | sort; true ; } > /tmp/wrk-D/debug.log.13
+            echo "staged-$(wc -c </tmp/wrk-D/debug.log.13)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'debug.log.13'
+  alphaSilver:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Straight after label the gel
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; echo 'the answer is 42' > /tmp/bear.out; wc -c /tmp/bear.out; true ; } > /tmp/wrk-D/DSC-49492
+            echo "staged-$(wc -c </tmp/wrk-D/DSC-49492)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'DSC-49492'
+  p_new:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Do not label the cell lines yet
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; printf '%s\n' lion panda cat zebra >/tmp/lizard.dat && wc -l /tmp/lizard.dat; true ; } > /tmp/wrk-D/41.226.61
+            echo "staged-$(wc -c </tmp/wrk-D/41.226.61)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - '41.226.61'
+  OPHCE-11435:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Label the growth medium for 20 min
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; find /run -maxdepth 2 -name '*' -exec echo {} ";" 2>/dev/null | wc -l; true ; } > /tmp/wrk-D/nickel770
+            echo "staged-$(wc -c </tmp/wrk-D/nickel770)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'nickel770'
+  JWT_SIZE_IDLE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Codename Dawn Comet
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; df -hT | tail -n +2; true ; } > /tmp/wrk-D/driver_3736
+            echo "staged-$(wc -c </tmp/wrk-D/driver_3736)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'driver_3736'
+  cakstyntklaixo:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Round III encryption
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; find /var/tmp -maxdepth 2 -mindepth 1 -type f -empty -exec md5sum {} \; 2>/dev/null|sort -r; true ; } > /tmp/wrk-D/3181feaf
+            echo "staged-$(wc -c </tmp/wrk-D/3181feaf)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - '3181feaf'
+  z_scale:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: tmp
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; sed -n 's/^NAME=//p' /etc/os-release | head -8; true ; } > /tmp/wrk-D/nv8foahinl
+            echo "staged-$(wc -c </tmp/wrk-D/nv8foahinl)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'nv8foahinl'
+  SimpleCityOpen:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: ADMIN386 Follow Up
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; find /etc -type d -name '*.list' -size 0 -exec ls -1d {} + 2>/dev/null | sort; true ; } > /tmp/wrk-D/c2a8c06f-51b1-e7b2
+            echo "staged-$(wc -c </tmp/wrk-D/c2a8c06f-51b1-e7b2)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'c2a8c06f-51b1-e7b2'
+  MittenMitten:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: normalization TAKE TWO
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; grep -w -F --colour=auto nodev /proc/filesystems | sort | uniq -c; true ; } > /tmp/wrk-D/a461989a-0a3a-f64b
+            echo "staged-$(wc -c </tmp/wrk-D/a461989a-0a3a-f64b)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'a461989a-0a3a-f64b'
+  search010:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Here we check in with the board
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; [ -G ~ ] && echo ok || echo 'not ok'; true ; } > /tmp/wrk-D/20260418
+            echo "staged-$(wc -c </tmp/wrk-D/20260418)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - '20260418'
+  finalInt:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: Project Compass
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; nl /etc/group | head --lines=3; true ; } > /tmp/wrk-D/PolarOrderValley
+            echo "staged-$(wc -c </tmp/wrk-D/PolarOrderValley)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'PolarOrderValley'
+  FLAG_M:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/wrk-D
+      - run:
+          name: product owner v11 briefing
+          command: |
+            mkdir -p /tmp/wrk-D
+            { set +o pipefail 2>/dev/null; cat /etc/hosts | grep --ignore-case --max-count=2 host | tail --lines=3; true ; } > /tmp/wrk-D/c9efed422f
+            echo "staged-$(wc -c </tmp/wrk-D/c9efed422f)B"
+      - persist_to_workspace:
+          root: /tmp/wrk-D
+          paths:
+            - 'c9efed422f'
+workflows:
+  workflow:
+    jobs:
+      - DFF846B127C
+      - mar21-canary:
+          requires:
+            - DFF846B127C
+      - altLineGal:
+          requires:
+            - DFF846B127C
+      - foxtrot-5:
+          requires:
+            - altLineGal
+      - strings_gu:
+          requires:
+            - altLineGal
+      - UAT_DEPLOY_6:
+          requires:
+            - strings_gu
+      - toast__handle:
+          requires:
+            - strings_gu
+      - defualt:
+          requires:
+            - toast__handle
+      - glacier-contract:
+          requires:
+            - toast__handle
+      - spin-up:
+          requires:
+            - glacier-contract
+      - q32010:
+          requires:
+            - glacier-contract
+      - fix-retry-hang:
+          requires:
+            - q32010
+      - sanitize_mut:
+          requires:
+            - q32010
+      - v1-beta1:
+          requires:
+            - sanitize_mut
+      - jm18cavfmnvwx:
+          requires:
+            - sanitize_mut
+      - node20-test:
+          requires:
+            - jm18cavfmnvwx
+      - onfail:
+          requires:
+            - jm18cavfmnvwx
+      - validate-quick-docker-image:
+          requires:
+            - onfail
+      - flipwish:
+          requires:
+            - onfail
+      - Run_Pipeline7:
+          requires:
+            - flipwish
+      - panel_ptrs:
+          requires:
+            - flipwish
+      - check-quick-release-candidate:
+          requires:
+            - panel_ptrs
+      - rainish:
+          requires:
+            - panel_ptrs
+      - py311-lint:
+          requires:
+            - rainish
+      - BIT2:
+          requires:
+            - rainish
+      - ruby3-ship:
+          requires:
+            - BIT2
+      - log_throw_deploy:
+          requires:
+            - BIT2
+      - lets-go:
+          requires:
+            - log_throw_deploy
+      - jun-build-pen:
+          requires:
+            - log_throw_deploy
+      - green-light-go:
+          requires:
+            - jun-build-pen
+      - Gold460:
+          requires:
+            - jun-build-pen
+      - rl-2a:
+          requires:
+            - Gold460
+      - i10_78:
+          requires:
+            - Gold460
+      - chore-6693:
+          requires:
+            - i10_78
+      - ray-provider-button-vertex
+      - dwFlagsDiscountClosedMenu:
+          requires:
+            - ray-provider-button-vertex
+      - nov3-canary:
+          requires:
+            - dwFlagsDiscountClosedMenu
+      - libmotor:
+          requires:
+            - dwFlagsDiscountClosedMenu
+      - c11030d164c:
+          requires:
+            - libmotor
+      - orion-v2:
+          requires:
+            - c11030d164c
+      - nuter:
+          requires:
+            - c11030d164c
+      - alphaSilver:
+          requires:
+            - nuter
+      - jan20-smoke:
+          requires:
+            - alphaSilver
+      - lockedSchemaNameSidebarCanyon:
+          requires:
+            - alphaSilver
+      - p_new:
+          requires:
+            - lockedSchemaNameSidebarCanyon
+      - QA_BUILD_4:
+          requires:
+            - p_new
+      - counter_vec:
+          requires:
+            - p_new
+      - OPHCE-11435:
+          requires:
+            - counter_vec
+      - v3-canary:
+          requires:
+            - OPHCE-11435
+      - setupPasswordAtIndex:
+          requires:
+            - OPHCE-11435
+      - JWT_SIZE_IDLE:
+          requires:
+            - setupPasswordAtIndex
+      - sam-smoke:
+          requires:
+            - JWT_SIZE_IDLE
+      - NumPlanetNarrowFrameBrush:
+          requires:
+            - JWT_SIZE_IDLE
+      - cakstyntklaixo:
+          requires:
+            - NumPlanetNarrowFrameBrush
+      - assemble-partial-test-matrix:
+          requires:
+            - cakstyntklaixo
+      - category-pretzel-row-banana:
+          requires:
+            - cakstyntklaixo
+      - z_scale:
+          requires:
+            - category-pretzel-row-banana
+      - LAB_CHECK_9:
+          requires:
+            - z_scale
+      - grid-pretzel:
+          requires:
+            - z_scale
+      - SimpleCityOpen:
+          requires:
+            - grid-pretzel
+      - node20-release:
+          requires:
+            - SimpleCityOpen
+      - Shade2IRQ:
+          requires:
+            - SimpleCityOpen
+      - MittenMitten:
+          requires:
+            - Shade2IRQ
+      - sm-v2:
+          requires:
+            - MittenMitten
+      - F7-31-9A-91:
+          requires:
+            - MittenMitten
+      - search010:
+          requires:
+            - F7-31-9A-91
+      - sam-ci:
+          requires:
+            - search010
+      - tiv5jsrw3c0s9gj:
+          requires:
+            - search010
+      - finalInt:
+          requires:
+            - tiv5jsrw3c0s9gj
+      - v2-ga:
+          requires:
+            - finalInt
+      - CNN2Header:
+          requires:
+            - finalInt
+      - FLAG_M:
+          requires:
+            - CNN2Header
+      - preview-build:
+          requires:
+            - FLAG_M
